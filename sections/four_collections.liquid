@@ -1,0 +1,119 @@
+{%- assign collection1 = collections[section.settings.Four_collections] -%}
+
+<Section class="four_collections">
+    <div class="container">
+    <div class="style_watch">
+      <h1>{{collection1.title}}</h1>
+      <h3>{{section.settings.collection_heading}}</h3>
+    </div>
+    
+    <div class="row">
+        {% for product in collection1.products limit: section.settings.max_products  %}
+        <div class="col-md-3">
+          <a href="{{product.url}}">
+          <img src="{{ product.featured_image  | img_url:'300x'}}" style="width:100%;height:auto">
+          <div class="four_collection_text">
+            <h3 >{{product.title}}</h3>
+            <span >{{product.price |money_with_currency}}</span>
+          </div>
+        </a>
+        </div>
+  
+        {%endfor%}
+    
+      
+    </div>
+   
+  </div>
+  </Section>
+  {% schema %}
+{
+  "name": "Four_Collection",
+  "class": "index-section index-section--flush",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "Four_collections",
+      "label": "Show Products in Collection"
+    },
+    {
+      "type":    "font_picker",
+      "label":   "Pick a font",
+      "id":      "collection_font",
+      "default": "helvetica_n4"
+  },
+    {
+        "type": "text",
+        "id": "collection_title",
+        "label":"Choose A Title",
+     
+        "default":"New Arrivals"
+      },
+    
+      {
+        "type": "color",
+        "id": "product_color",
+        "label":"Select a color",
+     
+        "default":"#000000"
+      },
+      {
+        "type":    "font_picker",
+        "label":   "Pick a font",
+        "id":      "collections_font",
+        "default": "helvetica_n4"
+    },
+    {
+      "type": "text",
+      "id": "collection_heading",
+      "label":"Subheading",
+   
+      "default":"Today's Outfit inspiration"
+    },
+    {
+      "type": "color",
+      "id": "code_sale_color",
+      "label":"Select a color",
+   
+      "default":"#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "Product_bg_color",
+        "label": "Background color",
+        "default": "#074962"
+        
+    },
+    {
+        "type": "text",
+        "id": "collection_btn",
+        "label": "Button",
+        "default": "Discover Now"
+      
+    },
+    {
+        "type": "image_picker",
+        "id": "images-picker",
+        "label": "choose image"
+        
+      
+    },
+    {
+        "type":"text",
+        "id":"max_products",
+        "label":"Maximun Amount Of Product",
+        "default":"4"
+    }
+
+  ],
+  "presets": [
+    {
+      "name":"Choose products"
+        
+      ,
+      "category":"product"
+    }
+  ]
+}
+
+{% endschema %}

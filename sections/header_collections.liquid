@@ -1,0 +1,423 @@
+{%- assign collection1 = collections[section.settings.header_collections_1] -%}
+{%- assign collection2 = collections[section.settings.header_collections_2] -%}
+{%- assign collection3 = collections[section.settings.header_collections_3] -%}
+{%- assign collection4 = collections[section.settings.header_collections_4] -%}
+
+
+  
+<!-- {%- assign collection = collections[section.settings.collection] -%} -->
+
+<div class="navbart">
+   
+   
+    <div class="dropdowns">
+      
+        <button class="dropbtns">
+             <a href="#">{{ collection1.title}}
+
+                {% for product_type in collection1.all_types %}
+                {% if forloop.first %}<i  class="fa fa-caret-down"></i> {% endif %}
+          
+        </a>
+        
+        </button>
+       
+        <div class="dropdown-contents">
+          
+          <div class="row">
+            {% for block in section.blocks%}
+            <div class="column">
+              <h3>{{block.settings.title}}</h3>
+              {% for product in collection1.products %}
+              <a href="#"{{product.url}}>{{product.title}}</a>
+              {%endfor%}
+            </div>
+            {%endfor%}
+  
+            <!-- <div class="column">
+              <h3>Category 2</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div> -->
+
+            <!-- <div class="column">
+              <h3>Category 3</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div> -->
+            <div class="column">
+              <div class="img-house" style="height:400px ;background:rgb(239, 239, 240);
+             display:block;padding-bottom: 30px;position: relative;">
+                <div class="links_image">
+                  <!-- <a  href="">Get the look<i class="fa fa-arrow-right" aria-hidden="true"></i></a>  -->
+                  
+                </div>
+  
+                <div class="img_container">
+                  <img src="./Assets/Asoso 1.png" style="height:100%;width:100%">
+                </div>
+          
+                <!-- <img style="width:50%;object-fit: contain;"src="https://img01.ztat.net/article/spp-media-p1/b6609d3718ce3faf9025a7138f45865b/630f5504c7b64998b7a12084711aece7.jpg?imwidth=606"> -->
+              </div>
+            
+            </div>
+          </div>
+    
+        </div>
+        {%endfor%}
+     
+      </div>
+
+      <div class="dropdowns">
+      
+        <button class="dropbtns">
+            <a href="#">{{ collection2.title}}
+                {% for product_type in collection2.all_types %}
+                {% if forloop.first %}<i  class="fa fa-caret-down"></i> {% endif %}
+          
+        </a>
+        </button>
+       
+        <div class="dropdown-contents">
+          
+          <div class="row">
+            <div class="column">
+              <h3>Category 1</h3>
+              <a href="#">Hoodies and sweater</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+              <a href="#">Link 4</a>
+              <a href="#">Link 5</a>
+              <a href="#">Link 6</a>
+              <a href="#">Link 7</a>
+              <a href="#">Link 8</a>
+              <a href="#">Link 9</a>
+            </div>
+  
+            <div class="column">
+              <h3>Category 2</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+
+            <div class="column">
+              <h3>Category 3</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            <div class="column">
+              <div class="img-house" style="height:400px ;background:rgb(239, 239, 240);
+             display:block;padding-bottom: 30px;position: relative;">
+                <div class="links_image">
+                  <!-- <a  href="">Get the look<i class="fa fa-arrow-right" aria-hidden="true"></i></a>  -->
+                  
+                </div>
+  
+                <div class="img_container">
+                  <img src="./Assets/Asoso 1.png" style="height:100%;width:100%">
+                </div>
+          
+                <!-- <img style="width:50%;object-fit: contain;"src="https://img01.ztat.net/article/spp-media-p1/b6609d3718ce3faf9025a7138f45865b/630f5504c7b64998b7a12084711aece7.jpg?imwidth=606"> -->
+              </div>
+            
+            </div>
+          </div>
+    
+        </div>
+        {%endfor%}
+     
+      </div>
+      <div class="dropdowns">
+      
+        <button class="dropbtns">
+            <a href="#">{{ collection3.title}}
+                {% for product_type in collection3.all_types %}
+                {% if forloop.first %}<i  class="fa fa-caret-down"></i> {% endif %}
+          
+        </a>
+        </button>
+       
+        <div class="dropdown-contents">
+          
+          <div class="row">
+            <div class="column">
+              <h3>Category 1</h3>
+              <a href="#">Hoodies and sweater</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+              <a href="#">Link 4</a>
+              <a href="#">Link 5</a>
+              <a href="#">Link 6</a>
+              <a href="#">Link 7</a>
+              <a href="#">Link 8</a>
+              <a href="#">Link 9</a>
+            </div>
+  
+            <div class="column">
+              <h3>Category 2</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+
+            <div class="column">
+              <h3>Category 3</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            <div class="column">
+              <div class="img-house" style="height:400px ;background:rgb(239, 239, 240);
+             display:block;padding-bottom: 30px;position: relative;">
+                <div class="links_image">
+                  <!-- <a  href="">Get the look<i class="fa fa-arrow-right" aria-hidden="true"></i></a>  -->
+                  
+                </div>
+  
+                <div class="img_container">
+                  <img src="./Assets/Asoso 1.png" style="height:100%;width:100%">
+                </div>
+          
+                <!-- <img style="width:50%;object-fit: contain;"src="https://img01.ztat.net/article/spp-media-p1/b6609d3718ce3faf9025a7138f45865b/630f5504c7b64998b7a12084711aece7.jpg?imwidth=606"> -->
+              </div>
+            
+            </div>
+          </div>
+    
+        </div>
+        {%endfor%}
+     
+      </div>
+
+      <div class="dropdowns">
+      
+        <button class="dropbtns">
+            <a href="#">{{ collection4.title}}
+                {% for product_type in collection4.all_types %}
+                {% if forloop.first %}<i  class="fa fa-caret-down"></i> {% endif %}
+          
+        </a>
+        </button>
+       
+        <div class="dropdown-contents">
+          
+          <div class="row">
+            <div class="column">
+              <h3>Category 1</h3>
+              <a href="#">Hoodies and sweater</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+              <a href="#">Link 4</a>
+              <a href="#">Link 5</a>
+              <a href="#">Link 6</a>
+              <a href="#">Link 7</a>
+              <a href="#">Link 8</a>
+              <a href="#">Link 9</a>
+            </div>
+  
+            <div class="column">
+              <h3>Category 2</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+
+            <div class="column">
+              <h3>Category 3</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            <div class="column">
+              <div class="img-house" style="height:400px ;background:rgb(239, 239, 240);
+             display:block;padding-bottom: 30px;position: relative;">
+                <div class="links_image">
+                  <!-- <a  href="">Get the look<i class="fa fa-arrow-right" aria-hidden="true"></i></a>  -->
+                  
+                </div>
+  
+                <div class="img_container">
+                  <img src="./Assets/Asoso 1.png" style="height:100%;width:100%">
+                </div>
+          
+                <!-- <img style="width:50%;object-fit: contain;"src="https://img01.ztat.net/article/spp-media-p1/b6609d3718ce3faf9025a7138f45865b/630f5504c7b64998b7a12084711aece7.jpg?imwidth=606"> -->
+              </div>
+            
+            </div>
+          </div>
+    
+        </div>
+        {%endfor%}
+     
+      </div>
+    
+    <div class="search_bar">
+      <form>
+        <input type="text" name="search" placeholder="Search..">
+        <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+      </form>
+     
+    </div>
+ 
+  </div>
+
+<!-- mobile-menu section -->
+<div id="myNav" class="overlay">
+<div class="mobile-logo">
+<a href="">Logo</a>
+</div>
+<!-- Button to close the overlay navigation -->
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<!-- Overlay content -->
+<div class="overlay-content">
+<div class="mob_cont">
+ <div class="mob1">
+   <a href="#">
+   <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
+   <div class="image_text_container">
+    <h5>collection1</h5> 
+   </div>
+ </a>
+ </div>
+ <div class="mob1">
+   <a href="#">
+     <img src="./Assets/Asoso 2.png" alt="" style="width:100%">
+     <div class="image_text_container">
+       <h5>collection1</h5> 
+      </div>
+   </a>
+ </div>
+</div>
+<div class="mob_cont">
+ <div class="mob1">
+   <a href="#">
+   <img src="./Assets/Asoso3.png" alt="" style="width:100%">
+   <div class="image_text_container">
+     <h5>collection1</h5> 
+    </div>
+ </a>
+ </div>
+ <div class="mob1">
+   <a href="#">
+     <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
+     <div class="image_text_container">
+       <h5>collection1</h5> 
+      </div>
+   </a>
+ </div>
+</div>
+<div class="mob_cont">
+ <div class="mob1">
+   <a href="#">
+   <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
+   <div class="image_text_container">
+     <h5>collection1</h5> 
+    </div>
+ </a>
+ </div>
+ <div class="mob1">
+   <a href="#">
+     <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
+     <div class="image_text_container">
+       <h5>collection1</h5> 
+      </div>
+   </a>
+ </div>
+</div>
+<!-- <a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Clients</a>
+<a href="#">Contact</a> -->
+</div>
+
+</div>
+{% schema %}
+{
+	"name": "Collection_category",
+	"settings": [		{
+			"type": "collection",
+			"id": "header_collections_1",
+			"label": "Collections in Header",
+			"info": "Text"
+		},
+		{
+			"type": "collection",
+			"id": "header_collections_2",
+			"label": "Collections in Header",
+			"info": "Text"
+			
+			
+		},
+		{
+			"type": "collection",
+			"id": "header_collections_3",
+			"label": "Collections in Header",
+			"info": "Text"
+        },
+        {
+			"type": "collection",
+			"id": "header_collections_4",
+			"label": "Collections in Header",
+			"info": "Text"
+		}
+
+
+
+
+
+	],
+
+	"presets": [{
+		"name": "Collection Category",
+		"category": "Collection"
+
+
+    }],
+    "max_blocks": 3,
+    "blocks": [
+    {
+      "type": "collection",
+      "name":"Menu", 
+      
+      "settings": [
+        {
+          "type": "collection",
+          "id": "title",
+          "label":"Sub collection"
+          
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": {
+            "da": "Menu",
+            "de": "Menü",
+            "en": "Menu",
+            "es": "Menú",
+            "fi": "Valikko",
+            "fr": "Menu",
+            "hi": "मेनू",
+            "it": "Menu",
+            "ja": "メニュー",
+            "ko": "메뉴",
+            "nb": "Meny",
+            "nl": "Menu",
+            "pt-BR": "Menu",
+            "pt-PT": "Menu",
+            "sv": "Meny",
+            "th": "เมนู",
+            "zh-CN": "菜单",
+            "zh-TW": "選單"
+          },
+          "default": "footer"
+        }
+      ]
+    }
+   
+  ]
+}
+{% endschema %}

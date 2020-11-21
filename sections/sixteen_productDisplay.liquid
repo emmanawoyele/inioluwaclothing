@@ -1,0 +1,122 @@
+<section id="sixteen_collection_container" style="background-color: {{section.settings.Product_bg_color}};"> 
+    {%- assign product_collections = collections[section.settings.products_id] -%}
+ 
+    <div class="slider container sliders" id="slider">
+    <div class="slide slides" id="slide">
+        {% for product in product_collections.products limit: section.settings.max_products  %}
+            
+        <div class="item" style="width:300px">
+            <a href="{{product.url}}">
+            <img  src="{{ product.featured_image  | img_url:'300x'}}" style=" height:400px;object-fit: cover;object-position:top;">
+            <div class="sixteen_collection_text">
+                <span>{{product.title}}</span>
+                  <p>{{product.description}}</p>
+                  <strong style="font-weight:400;">{{product.price | money_with_currency}}</strong>
+              </div>
+            </a>
+       
+        </div>
+        {%endfor%}
+
+    </div>
+   
+
+
+    <a class="prev ctrl-btn pro-prev" ><i class="fa fa-arrow-right" aria-hidden="true"></i></a> 
+    <a class="next ctrl-btn pro-next"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> 
+ 
+  </div>
+
+</section> 
+
+ {% schema %}
+{
+  "name": "Products_range",
+  "class": "index-section index-section--flush",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "products_id",
+      "label": "Show  From Ranges Of Products"
+    },
+    {
+      "type":    "font_picker",
+      "label":   "Pick a font",
+      "id":      "product_font",
+      "default": "helvetica_n4"
+  },
+    {
+        "type": "text",
+        "id": "product_title",
+        "label":"Choose A Title",
+     
+        "default":"New Arrivals"
+      },
+    
+      {
+        "type": "color",
+        "id": "product_color",
+        "label":"Select a color",
+     
+        "default":"#000000"
+      },
+      {
+        "type":    "font_picker",
+        "label":   "Pick a font",
+        "id":      "collection_font",
+        "default": "helvetica_n4"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label":"Subheading",
+   
+      "default":"High Fashion gets practical"
+    },
+    {
+      "type": "color",
+      "id": "code_sale_color",
+      "label":"Select a color",
+   
+      "default":"#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "Product_bg_color",
+        "label": "Background color",
+        "default": "#074962"
+        
+    },
+    {
+        "type": "text",
+        "id": "collection_btn",
+        "label": "Button",
+        "default": "Discover Now"
+      
+    },
+    {
+        "type": "image_picker",
+        "id": "images-picker",
+        "label": "choose image"
+        
+      
+    },
+    {
+        "type":"text",
+        "id":"max_products",
+        "label":"Maximun Amount Of Product",
+        "default":"16"
+    }
+
+  ],
+  "presets": [
+    {
+      "name":"Choose products"
+        
+      ,
+      "category":"product"
+    }
+  ]
+}
+
+{% endschema %}
