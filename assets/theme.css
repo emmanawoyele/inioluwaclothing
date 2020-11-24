@@ -3134,7 +3134,7 @@ hr {
 .collection-hero {
   position: relative;
   overflow: hidden;
-  margin-top: -55px;
+  /* margin-top: -55px; */
   margin-bottom: 22px; }
   @media only screen and (min-width: 750px) {
     .collection-hero {

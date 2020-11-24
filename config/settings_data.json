@@ -1,8 +1,21 @@
 {
     "current": {
-        "sections": {
+        "Default": {
             "header": {
                 "type": "header",
+                "settings": {}
+            },
+            "off-sale": {
+                "type": "off-sale",
+                "settings": {}
+            },
+            "New_sale": {
+                "type": "New_sale",
+                "settings": {}
+                
+            },
+            "products_range": {
+                "type": "Products_range",
                 "settings": {}
             },
             "Collection_category": {
@@ -112,11 +125,11 @@
                         "type": "link_list",
                         "settings": {}
                     }
-                  
+                   
                 },
                 "block_order": [
-                    "footer-0",
-                    "footer-1"
+                    "footer-0"
+                   
                 ],
                 "settings": {
                     "show_payment_icons": true
@@ -124,6 +137,9 @@
             }
         },
         "content_for_index": [
+            "off-sale",
+            "New_sale",
+            "Products-range",
             "Collection_category",
             "hero-1",
             "feature-row",
@@ -136,17 +152,13 @@
     },
     "presets": {
         "Default": {
-            "social_twitter_link": "https://twitter.com/shopify",
-            "social_facebook_link": "https://facebook.com/shopify",
-            "social_pinterest_link": "",
-            "social_instagram_link": "https://instagram.com/shopify",
-            "social_snapchat_link": "https://snapchat.com/shopify",
-            "social_youtube_link": "https://youtube.com/shopify",
-            "social_vimeo_link": "",
-            "social_tumblr_link": "",
             "sections": {
                 "header": {
                     "type": "header",
+                    "settings": {}
+                },
+                "off-sale": {
+                    "type": "off-sale",
                     "settings": {}
                 },
                 "Collection_category": {
@@ -259,8 +271,8 @@
                        
                     },
                     "block_order": [
-                        "footer-0",
-                        "footer-1"
+                        "footer-0"
+                    
                     ],
                     "settings": {
                         "show_payment_icons": true
@@ -268,6 +280,7 @@
                 }
             },
             "content_for_index": [
+                "off-sale",
                 "Collection_category",
                 "hero-1",
                 "feature-row",
@@ -500,11 +513,9 @@
                             "type": "link_list",
                             "settings": {}
                         }
-                      
                     },
                     "block_order": [
-                        "link_list",
-                        "text"
+                        "link_list"
                        
                     ],
                     "settings": {

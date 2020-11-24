@@ -1,6 +1,6 @@
 {%assign new_arrival=collections[section.settings.Newcollection_id]%}
 
-<section id="New_arrival" style="background-color: {{section.settings.New_Arrival_bg_color}};">
+<section class="New_arrival" style="background-color: {{section.settings.New_Arrival_bg_color}};">
     <a style="text-decoration:none;" href="{{new_arrival.url}}">
       <div class="container" style="height:100%">
         <div  class="row h-100" style="padding:20px 0 40px;">
@@ -32,7 +32,7 @@
   </section>
   {% schema %}
 {
-  "name": "off-sale",
+  "name": "New_sale",
   "class": "index-section index-section--flush",
   "settings": [
     {
@@ -176,7 +176,7 @@
   ],
   "presets": [
     {
-      "name":"Our Collection"
+      "name":"New_sale"
         
       ,
       "category":"collection"

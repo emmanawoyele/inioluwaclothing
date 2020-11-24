@@ -1,4 +1,5 @@
-
+{%- assign collection1 = collections[section.settings.mobile_collections_one] -%}
+{%- assign collection2 = collections[section.settings.mobile_collections_two] -%}
 {% if section.settings.message %}
   <style>
     {% if section.settings.logo != blank %}
@@ -54,7 +55,7 @@
     {% endif %}
     </div>
     <div id="overallbody" onclick="closeNav()"></div>
-    <header>
+    <header class="header_menu">
       <div class="container">
       <div id="header_bar">
       
@@ -74,13 +75,13 @@
                   {%endif%}
                   {%endfor%}
                  
-              </ul> 
+              </ul>
             
           </div>
          
           <ul class="logo_li">
               <li>
-                  <a href="#">
+                  <a class="logo_li" href="#">
         {% if section.settings.logo %}
         {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}" data-image-loading-animation>
@@ -157,70 +158,56 @@
   <!-- mobile-menu section -->
   <div id="myNav" class="overlay">
     <div class="mobile-logo">
-      <a href="">Logo</a>
+      {% if section.settings.logo %}
+      {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <a href="{{ routes.root_url }}" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}" data-image-loading-animation>
+          {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
+          <img class="lazyload js"
+              src="{{ section.settings.logo | img_url: '300x300' }}"
+              data-src="{{ img_url }}"
+              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+              data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
+              data-sizes="auto"
+              alt="{{ logo_alt | escape }}"
+              style="max-width: {{ section.settings.logo_max_width }}px">
+          <noscript>
+          {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+          <img src="{{ section.settings.logo | img_url: image_size }}"
+                  srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                  alt="{{ section.settings.logo.alt | default: shop.name }}"
+                  style="max-width: {{ section.settings.logo_max_width }}px;">
+          </noscript>
+      </a>
+      {% else %}
+      <a class="site-header__logo-link" href="{{ routes.root_url }}">{{ shop.name }}</a>
+      {% endif %}
     </div>
     <!-- Button to close the overlay navigation -->
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!-- Overlay content -->
     <div class="overlay-content">
+    
       <div class="mob_cont">
+        {% for collection in collections %}
         <div class="mob1">
-          <a href="#">
-          <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
+          <a href="{{collection.url}}">
+            <img src="{{ collection.image | img_url:'100x'}}" style="width:100%;height:auto">
           <div class="image_text_container">
-           <h5>collection1</h5> 
+            <h3>{{collection.title}}</h3>
           </div>
         </a>
         </div>
-        <div class="mob1">
-          <a href="#">
-            <img src="./Assets/Asoso 2.png" alt="" style="width:100%">
-            <div class="image_text_container">
-              <h5>collection1</h5> 
-             </div>
-          </a>
-        </div>
+    {% endfor%}
+        
+       
       </div>
-      <div class="mob_cont">
-        <div class="mob1">
-          <a href="#">
-          <img src="./Assets/Asoso3.png" alt="" style="width:100%">
-          <div class="image_text_container">
-            <h5>collection1</h5> 
-           </div>
-        </a>
-        </div>
-        <div class="mob1">
-          <a href="#">
-            <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
-            <div class="image_text_container">
-              <h5>collection1</h5> 
-             </div>
-          </a>
-        </div>
-      </div>
-      <div class="mob_cont">
-        <div class="mob1">
-          <a href="#">
-          <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
-          <div class="image_text_container">
-            <h5>collection1</h5> 
-           </div>
-        </a>
-        </div>
-        <div class="mob1">
-          <a href="#">
-            <img src="./Assets/Asoso 1.png" alt="" style="width:100%">
-            <div class="image_text_container">
-              <h5>collection1</h5> 
-             </div>
-          </a>
-        </div>
-      </div>
-      <!-- <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a> -->
+   
+<!--       
+       <div class="mob_cont">
+        
+      </div> -->
+      
+      
     </div>
   
   </div>
@@ -713,6 +700,22 @@
   "label":     "Background Color for image collection",
   "info":      "Text",
   "default":    "#000000"
+},
+{
+  "type": "collection",
+  "id": "mobile_collections_one",
+  "label": "choose  Collections for mobile navigation"
+},
+{
+  "type": "collection",
+  "id": "mobile_collections_two",
+  "label": "choose  Collections for mobile navigation"
+},
+{
+  "type":"text",
+  "id":"max_products",
+  "label":"Maximun Amount Of Product",
+  "default":"16"
 }
   ]
 }
