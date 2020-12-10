@@ -18,6 +18,12 @@
                 "type": "Products_range",
                 "settings": {}
             },
+            "social_twitter_link": "http://www.twitter.com/profile",
+            "social_facebook_link": "http://www.facebook.com/profile",
+            "social_pinterest_link": "http://www.pinterest.com/profile",
+            "social_instagram_link": "http://www.instragram.com/profile",
+            "social_youtube_link": "http://www.youtube.com/profile",
+            "social_vimeo_link": "http://www.twitter.com/profile",
             "Collection_category": {
                 "type": "Collection_Category",
                 "settings": {}
@@ -307,6 +313,7 @@
             "image_overlay_opacity": 40,
             "color_body_bg": "#f8f8f8",
             "type_header_font": "muli_n6",
+            
             "type_header_base_size": 26,
             "type_base_font": "muli_n4",
             "type_base_size": 18,

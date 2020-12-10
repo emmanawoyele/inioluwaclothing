@@ -1,14 +1,13 @@
-<section class="sixteen_collection_container" style="background-color: {{section.settings.Product_bg_color}};"> 
+<section class="swiper-container" style="background-color: {{section.settings.Product_bg_color}};"> 
     {%- assign product_collections = collections[section.settings.products_id] -%}
  
-    <div class="slider container sliders" id="slider">
-    <div class="slide slides" id="slide">
+    <div class="swiper-wrapper container">
+   
         {% for product in product_collections.products limit: section.settings.max_products  %}
-            
-        <div class="item" style="width:300px">
+        <div class="swiper-slide">
             <a href="{{product.url}}">
-            <img  src="{{ product.featured_image  | img_url:'300x'}}" style=" height:400px;object-fit: cover;object-position:top;">
-            <div class="sixteen_collection_text">
+            <img class="pic" src="{{ product.featured_image  | img_url:''}}" style="width:100%; height:400px;object-fit: cover;object-position:top;">
+            <div class="swiper_collection_text">
                 <span>{{product.title}}</span>
                   <p>{{product.description}}</p>
                   <strong style="font-weight:400;">{{product.price | money_with_currency}}</strong>
@@ -19,14 +18,11 @@
         {%endfor%}
 
     </div>
-   
-
-
-    <a class="prev ctrl-btn pro-prev" ><i class="fa fa-arrow-right" aria-hidden="true"></i></a> 
-    <a class="next ctrl-btn pro-next"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> 
+  
  
-  </div>
-
+ 
+  <div  class="swiper-button-next"style="color:{{section.settings.code_sale_color}}" ></div>
+  <div  class="swiper-button-prev" style="color:{{section.settings.code_sale_color}}"></div>
 </section> 
 
  {% schema %}
@@ -76,7 +72,7 @@
     {
       "type": "color",
       "id": "code_sale_color",
-      "label":"Select a color",
+      "label":"Select a color for Swiper ",
    
       "default":"#ffffff"
     },
